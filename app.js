@@ -1,8 +1,15 @@
-
 const express = require('express'); // Importazione express
-const app = express();// salvo l'invocazione di express in una variabile
-const port = 4000; // identifico la porta 
+const app = express();              // Invocazione di express
+const port = 4000;                  // Porta del server
 
-app.listen(port, () =>{
-    console.log('server attivo sulla porta '+ port )
-}) 
+// rotta principale
+app.get('/', (req, res) => {
+    console.log('sto chiamando la rotta principale');
+    res.send('Benvenuto nel blog');
+});
+
+
+// Avvio del server
+app.listen(port, () => {
+    console.log(`[DEBUG] Server attivo sulla porta ${port}`);
+});
