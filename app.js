@@ -8,6 +8,12 @@ app.get('/', (req, res) => {
     res.send('Benvenuto nel blog');
 });
 
+// Rotta /bacheca
+app.get('/bacheca', (req, res) => {
+    console.log('sto chiamando la bacheca');
+    res.json({ posts });
+  });
+
 
 // Avvio del server
 app.listen(port, () => {
